@@ -11,8 +11,9 @@
 #    print("The number is negative.")
 
 number=''
-error_checker=False
 
+#check that user is inputting a number
+error_checker=False
 while error_checker == False:
     try:
        number = input("Enter a number: ") 
@@ -21,6 +22,7 @@ while error_checker == False:
     except: 
         print("Please input a number!")
 
+#find if number is positive/negative or zero
 number = float(number)
 if number > 0:
     print("The number is positive.")

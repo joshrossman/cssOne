@@ -6,6 +6,7 @@
 print("Please input three numbers:")
 number_one,number_two,number_three='','',''
 
+#check the user is inputting numbers
 def check_for_error(my_number):
     error_checker=False
     while error_checker == False:
@@ -22,6 +23,7 @@ number_two=check_for_error(number_two)
 number_three=check_for_error(number_three)
 print(number_one+number_two+number_three)
 
+#Find the smallest number
 if number_one<number_two and number_one<number_three:
     print("The smallest number is", number_one)
 elif number_two<number_one and number_two<number_three:

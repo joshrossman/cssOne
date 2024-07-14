@@ -11,6 +11,7 @@
 # The year 2000 should be True. The year 2024 should be True
 
 year=''
+#Make sure a valid year is being submitted
 def check_for_error():
     error_checker=False
     while error_checker == False:
@@ -25,6 +26,8 @@ def check_for_error():
         except: 
             print("Error:Not a valid year!")
 year=check_for_error()
+
+#check if the year subbmitted is a leap year
 if year%4==0 and not year/100==year//100 or year%400==0:
     print(True)
 else:

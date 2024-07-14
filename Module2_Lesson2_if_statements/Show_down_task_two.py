@@ -8,6 +8,7 @@
 print("Please input three numbers:")
 number_one,number_two,number_three='','',''
 
+#check the user is inputting numbers
 def check_for_error(my_number):
     error_checker=False
     while error_checker == False:
@@ -19,6 +20,7 @@ def check_for_error(my_number):
         except: 
             print("Please input a number!")
 
+#collect three numbers
 number_one=check_for_error(number_one)
 number_two=check_for_error(number_two)
 number_three=check_for_error(number_three)
@@ -27,9 +29,11 @@ highest = ""
 lowest = ""
 equal=False
 
+#check if all numbers are equal
 if number_one==number_two==number_three:
     equal=True
 
+#find and print the highest and lowest number
 if number_one<=number_two<=number_three:
     highest=number_three
     lowest=number_one
@@ -51,6 +55,7 @@ elif number_three<=number_two<=number_one:
 highest=str(highest)+'.'
 lowest=str(lowest)+'.'
 
+#print results
 if equal:
     print("All numbers are equal!")
 else:
