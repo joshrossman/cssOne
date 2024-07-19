@@ -10,16 +10,22 @@
 #bugs
 #If you give bad input, it will not work on the first problems 
 # afterwards 
-# also need to fix for zero
+
 
 def addition(x,y):
-    return x+y
+    print(f"{x} + {y} = {float(x)+float(y)}")
 def subtraction(x,y):
-    return x-y
+    print(f"{x} - {y} = {float(x)-float(y)}")
 def division(x,y):
-    return x/y
+    try:
+        print(f"{x} / {y} = {float(x)/float(y)}")
+    except ZeroDivisionError:
+        print("You cannot divide by Zero!")
 def multiplication(x,y):
-    return x*y
+    print(f"{x} * {y} = {float(x)*float(y)}")
+
+
+    
 
 stay=0
 while stay==0:
@@ -35,25 +41,44 @@ while stay==0:
     else:
         input("Please make another selection. Not a valid choice!\n")
 
-    num_one = input("Please input your first number:\n")
-    num_two = input("Please input your second number:\n")
-
+    num_one=True
+    while num_one:
+        num_one = input("Please input your first number:\n")
+        try:
+            num_one=int(num_one)
+            break
+        except:
+            print("Not a valid number!")
+            num_one=True
+    num_two=True
+    while num_two:
+        num_two = input("Please input your second number:\n")
+        try:
+            num_two=int(num_two)
+            break
+        except:
+            print("Not a valid number!")
+            num_two=True
+    
     if my_operator=="a":
-        print(f"{num_one} + {num_two} = {float(num_one)+float(num_two)}")
+        addition(num_one,num_two)
     elif my_operator=="m":
-        print(f"{num_one} * {num_two} = {float(num_one)*float(num_two)}")
+        multiplication(num_one,num_two)
     elif my_operator=="s":
-        print(f"{num_one} - {num_two} = {float(num_one)-float(num_two)}")
+        subtraction(num_one,num_two)
     elif my_operator=="d":
-        print(f"{num_one} / {num_two} = {float(num_one)/float(num_two)}")
+        division(num_one,num_two)
     
     go_again = ''
-    while go_again != "yes" and go_again!="y":
+    while True:
         go_again = input("Would you like to perform another operation? Y/N\n").lower()
         
         if go_again=="n" or go_again=="no":
             stay=1
             break
+        elif go_again=="y" or go_again=="yes":
+            print("Okay!")
+            break   
         else:
             print("Not a valid input")
    
